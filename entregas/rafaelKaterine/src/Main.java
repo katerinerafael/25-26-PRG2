@@ -1,8 +1,7 @@
-
 import java.util.*;
 
-public class main {
-    public static void main(String[] args) {
+public class Main {
+    public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] linea = new String[10];
         Stack<String[]> historial = new Stack<>();
@@ -28,31 +27,6 @@ public class main {
         System.out.println("Comandos: [L]inea activa | [E]ditar | [I]ntercambiar | [B]orrar | [D]eshacer | [S]alir\n> ");
         String cmd = sc.nextLine().toUpperCase();
 
-        if (cmd.equals("S")) break;
-
-
-        try{
-            switch(cmd){
-                case "L" -> {
-                    System.out.print("Seleccione una linea (0-9): ");
-                    punteroLinea = Integer.parseInt(sc.nextLine());
-                }
-                case "E" -> {
-                    historial.push(linea.clone());
-                    System.out.print("Ingrese el nuevo texto para la linea " + punteroLinea + ": ");
-                    linea[punteroLinea] = sc.nextLine();
-                }
-                case "I" -> {
-                    System.out.print("Ingrese la primera linea a intercambiar (0-9): ");
-                    int linea1 = Integer.parseInt(sc.nextLine());
-                }
-            }
-        }
-
-    }
-
     }
 }
-
-
-
+}
