@@ -17,23 +17,9 @@ public class ExamenMina {
 
         while (juegoEncendido == 1) {
             mostrarTablero(tablero);
-
-
-            posicionActual = 0;
-            while (posicionActual == 0) {
-                System.out.println();
-                System.out.println("Ingrese X:");
-                posicionColumna = scanner.nextInt();
-                System.out.println("Ingrese Y:");
-                posicionFila = scanner.nextInt();
-
-                if (posicionFila < 1 || posicionFila > 5 || posicionColumna < 1 || posicionColumna > 7) {
-                    System.out.println("Coordenadas fuera de rango. Intenta de nuevo.");
-                    posicionActual = 0;
-                } else {
-                    posicionActual = 1;
-                }
-            }
+            int[] coordenadas = pedirCoordenadas(scanner);
+            posicionFila = coordenadas[0];
+            posicionColumna = coordenadas[1];
 
             if (ubicacionMinas[posicionFila][posicionColumna].equals("1")) {
                 tablero[posicionFila][posicionColumna] = "x";
@@ -55,6 +41,25 @@ public class ExamenMina {
         }
     }
 
+	public static int[] pedirCoordenadas(Scanner scanner) {
+        int fila = 0, columna = 0;
+        boolean valido = false;
+
+        while (!valido) {
+            System.out.println("\nIngrese X:");
+            columna = scanner.nextInt();
+            System.out.println("Ingrese Y:");
+            fila = scanner.nextInt();
+
+            if (fila < 1 || fila > 5 || columna < 1 || columna > 7) {
+                System.out.println("Coordenadas fuera de rango. Intenta de nuevo.");
+            } else {
+                valido = true;
+            }
+        }
+
+        return new int[]{fila, columna};
+    }
     public static void inicializarTablero() {
         tablero[0][0] = " ";
         for (int j = 1; j < 8; j++) {
@@ -95,7 +100,7 @@ public class ExamenMina {
             i++;
         }
     }
-	public static void mostrarTablero(String[][] matriz) {
+public static void mostrarTablero(String[][] matriz) {
     for (int i = 0; i < matriz.length; i++) {
         for (int j = 0; j < matriz[i].length; j++) {
             System.out.print(matriz[i][j] + " ");
