@@ -16,13 +16,8 @@ public class ExamenMina {
         int posicionFila = 0, posicionColumna = 0, juegoEncendido = 1, posicionActual, contadorMovimientos = 0, contadorMinas = 0;
 
         while (juegoEncendido == 1) {
+            mostrarTablero(tablero);
 
-            for (int i = 0; i < tablero.length; i++) {            
-                for (int j = 0; j < tablero[i].length; j++) {                                     
-                    System.out.print(tablero[i][j] + " ");
-                }
-                System.out.println();
-            }
 
             posicionActual = 0;
             while (posicionActual == 0) {
@@ -100,4 +95,13 @@ public class ExamenMina {
             i++;
         }
     }
+	public static void mostrarTablero(String[][] matriz) {
+    for (int i = 0; i < matriz.length; i++) {
+        for (int j = 0; j < matriz[i].length; j++) {
+            System.out.print(matriz[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
+
 }
