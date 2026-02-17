@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ExamenMina{
 
-	static String[][] mapaMinasMostrar = 	
+	static String[][] tablero = 	
 		{ //[0][0]	[0][1]	[0][2]	[0][3]	[0][4]	[0][5]	[0][6]	[0][7]
 			{" ",	"1", 	"2", 	"3", 	"4",	"5",	"6", 	"7"},
 		  //[1][0]	[1][1]	[1][2]	[1][3]	[1][4]	[1][5]	[1][6]	[1][7]
@@ -17,7 +17,7 @@ public class ExamenMina{
 			{"5", 	"-", 	"-",	"-", 	"-", 	"-", 	"-",	"-"}
 		};
 		
-	static String[][] mapaMinasActivas = 	
+	static String[][] ubicacionMinas = 	
 		{ //[0][0]	[0][1]	[0][2]	[0][3]	[0][4]	[0][5]	[0][6]	[0][7]
 			{" ",	"1", 	"2", 	"3", 	"4",	"5",	"6", 	"7"},
 		  //[1][0]	[1][1]	[1][2]	[1][3]	[1][4]	[1][5]	[1][6]	[1][7]
@@ -34,65 +34,65 @@ public class ExamenMina{
 
 	//Posiciones Random de la mina
 	public static void main(String[] args){	
-	Scanner scan = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 		///////////////////////////
 		int i=0;	
 		while ( i < 5){
-			int PosYMina = (int)(Math.random()*2+1);
-			int PosXMina = (int)(Math.random()*4+1);
-			if (mapaMinasActivas[PosXMina][PosYMina]=="1"){
+			int minaPosicionColumna = (int)(Math.random()*2+1);
+			int minaPosicionFila = (int)(Math.random()*4+1);
+			if (ubicacionMinas[minaPosicionFila][minaPosicionColumna]=="1"){
 			i=i-1;
 			}
 			else {
-				mapaMinasActivas[PosXMina+1][PosYMina+1]="1";
+				ubicacionMinas[minaPosicionFila+1][minaPosicionColumna+1]="1";
 			}
 			i++;
 		}
 	
-		int posX=0, posY=0, juegoEncendido=1, valoresCorrectos, contadorMapa=0, contadorMinas=0;
+		int posicionFila=0, posicionColumna=0, juegoEncendido=1, posicionActual, contadorMomientosmientos=0, contadorMinas=0;
 		/////////////Comienza el juego
 		while(juegoEncendido==1){
-			for( i = 0; i<mapaMinasMostrar.length; i++){            
-				for (int j = 0; j<=mapaMinasMostrar.length+1; j++) {                                     
-					System.out.print(mapaMinasMostrar[i][j]);
+			for( i = 0; i<tablero.length; i++){            
+				for (int j = 0; j<=tablero.length+1; j++) {                                     
+					System.out.print(tablero[i][j]);
 				}
 				System.out.println(" ");
 			}
-			valoresCorrectos=0;//reseteo de la variable
-			while(valoresCorrectos==0){
+			posicionActual=0;//reseteo de la variable
+			while(posicionActual==0){
 				System.out.println(" ");
 				System.out.println("Ingrese X");
-				posY = scan.nextInt();
+				posicionColumna = scanner.nextInt();
 				System.out.println("Ingrese Y");
-				posX = scan.nextInt();
-				if(posX>5){
-					valoresCorrectos=0;
+				posicionFila = scanner.nextInt();
+				if(posicionFila>5){
+					posicionActual=0;
 				}
-				else if(posY>7){
-					valoresCorrectos=0;
+				else if(posicionColumna>7){
+					posicionActual=0;
 				}
 				else{
-					valoresCorrectos=1;
+					posicionActual=1;
 				}
 			}
 
-			if(mapaMinasActivas[posX][posY]=="1"){
-			mapaMinasMostrar[posX][posY]="x";
+			if(ubicacionMinas[posicionFila][posicionColumna]=="1"){
+			tablero[posicionFila][posicionColumna]="x";
 			contadorMinas++;
 			}
-			else if(mapaMinasActivas[posX][posY]=="0"){
-			mapaMinasMostrar[posX][posY]=".";
+			else if(ubicacionMinas[posicionFila][posicionColumna]=="0"){
+			tablero[posicionFila][posicionColumna]=".";
 			}
 			else{
 			System.out.println("No es correcta esa opcion.");
 			}
 			
-			contadorMapa++;
+			contadorMomientos++;
 			if(contadorMinas>2){
 				juegoEncendido=0;
 				System.out.println("Has perdido");
 			}
-			else if(contadorMapa>=31){
+			else if(contadorMomientos>=31){
 				System.out.println("Felicidades Ganador!");
 				juegoEncendido=0;
 			}
@@ -103,4 +103,4 @@ public class ExamenMina{
 	}	
 		
 		
-}
+}    
