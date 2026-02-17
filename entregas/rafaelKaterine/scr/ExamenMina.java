@@ -21,7 +21,7 @@ public class ExamenMina {
             posicionFila = coordenadas[0];
             posicionColumna = coordenadas[1];
 
-        	actualizarTablero(posicionFila, posicionColumna, new int[]{contadorMinas});
+			contadorMinas = actualizarTablero(posicionFila, posicionColumna, contadorMinas);
             contadorMovimientos++;
             juegoEncendido = verificarFinJuego(contadorMinas, contadorMovimientos);
 
@@ -97,14 +97,15 @@ public static void mostrarTablero(String[][] matriz) {
 }
 
 public static void actualizarTablero(int fila, int columna, int[] contadorMinas) {
-    if (ubicacionMinas[fila][columna].equals("1")) {
-        tablero[fila][columna] = "*";
-        contadorMinas[0]++; 
-    } else if (ubicacionMinas[fila][columna].equals("0")) {
-        tablero[fila][columna] = ".";
-    } else {
-        System.out.println("No es correcta esa opción.");
-    }
+			if (ubicacionMinas[fila][columna].equals("1")) {
+			tablero[fila][columna] = "*";
+			contadorMinas++; 
+			} else if (ubicacionMinas[fila][columna].equals("0")) {
+				tablero[fila][columna] = ".";
+			} else {
+				System.out.println("No es correcta esa opción.");
+			}
+			return contadorMinas;
 }
 
 public static int verificarFinJuego(int contadorMinas, int contadorMovimientos) {
