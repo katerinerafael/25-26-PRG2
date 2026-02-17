@@ -32,11 +32,9 @@ public class ExamenMina{
 			{"5", 	"0", 	"0",	"0", 	"0", 	"0", 	"0",	"0"}
 		};
 
-	//Posiciones Random de la mina
 	public static void main(String[] args){	
 	Scanner scanner = new Scanner(System.in);
-		///////////////////////////
-		int i=0;	
+		int i=0;	Renombrado y Reestructurar de variables: Algunas varibles si cumplian con el codigo limpio pero no contaban con la logica que se necesita en el codigo.
 		while ( i < 5){
 			int minaPosicionColumna = (int)(Math.random()*2+1);
 			int minaPosicionFila = (int)(Math.random()*4+1);
@@ -50,7 +48,6 @@ public class ExamenMina{
 		}
 	
 		int posicionFila=0, posicionColumna=0, juegoEncendido=1, posicionActual, contadorMomientosmientos=0, contadorMinas=0;
-		/////////////Comienza el juego
 		while(juegoEncendido==1){
 			for( i = 0; i<tablero.length; i++){            
 				for (int j = 0; j<=tablero.length+1; j++) {                                     
@@ -58,10 +55,10 @@ public class ExamenMina{
 				}
 				System.out.println(" ");
 			}
-			posicionActual=0;//reseteo de la variable
+			posicionActual=0;
 			while(posicionActual==0){
 				System.out.println(" ");
-				System.out.println("Ingrese X");
+				System.out.printl//reseteo de la variablen("Ingrese X");
 				posicionColumna = scanner.nextInt();
 				System.out.println("Ingrese Y");
 				posicionFila = scanner.nextInt();
