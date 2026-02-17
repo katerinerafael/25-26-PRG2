@@ -21,14 +21,8 @@ public class ExamenMina {
             posicionFila = coordenadas[0];
             posicionColumna = coordenadas[1];
 
-            if (ubicacionMinas[posicionFila][posicionColumna].equals("1")) {
-                tablero[posicionFila][posicionColumna] = "x";
-                contadorMinas++;
-            } else if (ubicacionMinas[posicionFila][posicionColumna].equals("0")) {
-                tablero[posicionFila][posicionColumna] = ".";
-            } else {
-                System.out.println("No es correcta esa opción.");
-            }
+        	actualizarTablero(posicionFila, posicionColumna, new int[]{contadorMinas});
+
 
             contadorMovimientos++;
             if (contadorMinas > 2) {
@@ -106,6 +100,17 @@ public static void mostrarTablero(String[][] matriz) {
             System.out.print(matriz[i][j] + " ");
         }
         System.out.println();
+    }
+}
+
+public static void actualizarTablero(int fila, int columna, int[] contadorMinas) {
+    if (ubicacionMinas[fila][columna].equals("1")) {
+        tablero[fila][columna] = "*";
+        contadorMinas[0]++; 
+    } else if (ubicacionMinas[fila][columna].equals("0")) {
+        tablero[fila][columna] = ".";
+    } else {
+        System.out.println("No es correcta esa opción.");
     }
 }
 
