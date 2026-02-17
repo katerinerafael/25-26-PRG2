@@ -13,7 +13,7 @@ public class ExamenMina {
 
         Scanner scanner = new Scanner(System.in);
 
-        int posicionFila = 0, posicionColumna = 0, juegoEncendido = 1, posicionActual, contadorMovimientos = 0, contadorMinas = 0;
+        int posicionFila = 0, posicionColumna = 0, juegoEncendido = 1, contadorMovimientos = 0, contadorMinas = 0;
 
         while (juegoEncendido == 1) {
             mostrarTablero(tablero);
@@ -21,14 +21,13 @@ public class ExamenMina {
             posicionFila = coordenadas[0];
             posicionColumna = coordenadas[1];
 
-			contadorMinas = actualizarTablero(posicionFila, posicionColumna, contadorMinas);
+            contadorMinas = actualizarTablero(posicionFila, posicionColumna, contadorMinas);
             contadorMovimientos++;
             juegoEncendido = verificarFinJuego(contadorMinas, contadorMovimientos);
-
         }
     }
 
-	public static int[] pedirCoordenadas(Scanner scanner) {
+    public static int[] pedirCoordenadas(Scanner scanner) {
         int fila = 0, columna = 0;
         boolean valido = false;
 
@@ -47,6 +46,7 @@ public class ExamenMina {
 
         return new int[]{fila, columna};
     }
+
     public static void inicializarTablero() {
         tablero[0][0] = " ";
         for (int j = 1; j < 8; j++) {
@@ -87,38 +87,37 @@ public class ExamenMina {
             i++;
         }
     }
-public static void mostrarTablero(String[][] matriz) {
-    for (int i = 0; i < matriz.length; i++) {
-        for (int j = 0; j < matriz[i].length; j++) {
-            System.out.print(matriz[i][j] + " ");
+
+    public static void mostrarTablero(String[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
-}
 
-public static void actualizarTablero(int fila, int columna, int[] contadorMinas) {
-			if (ubicacionMinas[fila][columna].equals("1")) {
-			tablero[fila][columna] = "*";
-			contadorMinas++; 
-			} else if (ubicacionMinas[fila][columna].equals("0")) {
-				tablero[fila][columna] = ".";
-			} else {
-				System.out.println("No es correcta esa opción.");
-			}
-			return contadorMinas;
-}
-
-public static int verificarFinJuego(int contadorMinas, int contadorMovimientos) {
-    if (contadorMinas > 2) {
-        System.out.println("Has perdido");
-        return 0;
-    } else if (contadorMovimientos >= 31) {
-        System.out.println("Felicidades Ganador!");
-        return 0; 
-    } else {
-        return 1; 
+    public static int actualizarTablero(int fila, int columna, int contadorMinas) {
+        if (ubicacionMinas[fila][columna].equals("1")) {
+            tablero[fila][columna] = "*";
+            contadorMinas++;
+        } else if (ubicacionMinas[fila][columna].equals("0")) {
+            tablero[fila][columna] = ".";
+        } else {
+            System.out.println("No es correcta esa opción.");
+        }
+        return contadorMinas;
     }
-}
 
-
+    public static int verificarFinJuego(int contadorMinas, int contadorMovimientos) {
+        if (contadorMinas > 2) {
+            System.out.println("Has perdido");
+            return 0;
+        } else if (contadorMovimientos >= 31) {
+            System.out.println("Felicidades Ganador!");
+            return 0; 
+        } else {
+            return 1; 
+        }
+    }
 }
