@@ -3,15 +3,8 @@ public class ExamenMina{
 
     static String[][] tablero = new String[6][8];
         
-    static String[][] ubicacionMinas =     
-        { 
-            {" ", "1", "2", "3", "4", "5", "6", "7"},
-            {"1", "0", "0", "0", "0", "0", "0", "0"},
-            {"2", "0", "0", "0", "0", "0", "0", "0"},
-            {"3", "0", "0", "0", "0", "0", "0", "0"},
-            {"4", "0", "0", "0", "0", "0", "0", "0"},
-            {"5", "0", "0", "0", "0", "0", "0", "0"}
-        };
+    static String[][] ubicacionMinas = new String[6][8];
+
 
     public static void main(String[] args){    
 
@@ -99,4 +92,22 @@ public class ExamenMina{
             }
         }
     }
+		public static void inicializarMinas() {
+
+		ubicacionMinas[0][0] = " ";
+
+		// Encabezado columnas
+		for (int j = 1; j < 8; j++) {
+			ubicacionMinas[0][j] = String.valueOf(j);
+		}
+
+		// Filas con 0
+		for (int i = 1; i < 6; i++) {
+			ubicacionMinas[i][0] = String.valueOf(i);
+			for (int j = 1; j < 8; j++) {
+				ubicacionMinas[i][j] = "0";
+			}
+		}
+	}
+
 }
