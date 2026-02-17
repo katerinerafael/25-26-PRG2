@@ -22,16 +22,9 @@ public class ExamenMina {
             posicionColumna = coordenadas[1];
 
         	actualizarTablero(posicionFila, posicionColumna, new int[]{contadorMinas});
-
-
             contadorMovimientos++;
-            if (contadorMinas > 2) {
-                juegoEncendido = 0;
-                System.out.println("Has perdido");
-            } else if (contadorMovimientos >= 31) {
-                System.out.println("Felicidades Ganador!");
-                juegoEncendido = 0;
-            }
+            juegoEncendido = verificarFinJuego(contadorMinas, contadorMovimientos);
+
         }
     }
 
@@ -113,5 +106,18 @@ public static void actualizarTablero(int fila, int columna, int[] contadorMinas)
         System.out.println("No es correcta esa opción.");
     }
 }
+
+public static int verificarFinJuego(int contadorMinas, int contadorMovimientos) {
+    if (contadorMinas > 2) {
+        System.out.println("Has perdido");
+        return 0;
+    } else if (contadorMovimientos >= 31) {
+        System.out.println("Felicidades Ganador!");
+        return 0; 
+    } else {
+        return 1; 
+    }
+}
+
 
 }
