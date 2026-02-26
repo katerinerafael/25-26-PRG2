@@ -7,4 +7,7 @@ class Fecha {
 
     public void editar()
     public void mostrar()
+
+    public void calendarizar(Fecha fechaFinal, int diasDeFrecuencia)
+    
 }
