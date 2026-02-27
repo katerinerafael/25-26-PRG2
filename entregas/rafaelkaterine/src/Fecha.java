@@ -15,9 +15,9 @@ class Fecha {
     public boolean esBisiesto()
     public boolean tiene30Dias()
 
-
+    public int diasTranscurridos(Fecha fecha)
+    public int diasTranscurridos(int dia, int mes, int año)
 
     public Fecha[] calendarizar(Fecha fecha, int frecuenciaEnDias)    
     public Fecha[] calendarizar(Fecha fecha, int frecuencia, int cantidadDeFechas)    
-    pu
 }
