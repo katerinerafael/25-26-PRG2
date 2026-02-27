@@ -8,6 +8,8 @@ class Fecha {
     public void editar(int dia, int mes, int año)
     public void mostrar()
 
+    public boolean finDeSemana()
+
 
     public Fecha[] calendarizar(Fecha fecha, int frecuenciaEnDias)    
     public Fecha[] calendarizar(Fecha fecha, int frecuenciaEnDias)    
