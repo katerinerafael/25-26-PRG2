@@ -12,6 +12,6 @@ class Fecha {
     public boolean esBisiesto()
 
     public Fecha[] calendarizar(Fecha fecha, int frecuenciaEnDias)    
-    public Fecha[] calendarizar(Fecha fecha, int frecuenciaEnDias)    
+    public Fecha[] calendarizar(Fecha fecha, int frecuencia, int tipoDeCalendario)    
 
 }
