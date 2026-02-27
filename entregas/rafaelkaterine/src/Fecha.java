@@ -8,6 +8,8 @@ class Fecha {
     public void editar(int dia, int mes, int año)
     public void mostrar()
 
+    public boolean esValida()
+
     public boolean finDeSemana()
     public boolean esBisiesto()
 
