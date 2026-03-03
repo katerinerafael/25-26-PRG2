@@ -12,7 +12,7 @@ class Fecha {
     public boolean esPosterior(Fecha fecha)
     public boolean esPosterior(int dia, int mes, int año)
     public boolean finDeSemana()
-    public boolean esBisiesto()
+    public boolean seEncuentraenAñoBisiesto()
     public boolean tiene30Dias()
 
     public int diasTranscurridos(Fecha fecha)
