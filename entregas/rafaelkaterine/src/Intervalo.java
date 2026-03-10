@@ -3,19 +3,24 @@ class Intervalo{
      private double longitud;
 
      public Intervalo (double inferior, double superior) {
+        this.longitud = superior - inferior;
+        this.puntoMedio = inferior + this.longitud / 2;
+
     }
 
     public Intervalo (double superior) {
+        this(0, superior);
     }
 
     public Intervalo () {
+        this(0, 0);
     }
     
     public Intervalo (Intervalo intervalo) {
+        this(intervalo.inferior, intervalo.superior);
     }
 
     public Intervalo clone() {
-
     }
 
     public double longitud() {
