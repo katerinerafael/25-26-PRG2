@@ -5,7 +5,6 @@ class Intervalo{
      public Intervalo (double inferior, double superior) {
         this.longitud = superior - inferior;
         this.puntoMedio = inferior + this.longitud / 2;
-
     }
 
     public Intervalo (double superior) {
@@ -21,6 +20,7 @@ class Intervalo{
     }
 
     public Intervalo clone() {
+        return new Intervalo(this);
     }
 
     public double longitud() {
