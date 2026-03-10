@@ -24,9 +24,11 @@ class Intervalo{
     }
 
     public double longitud() {
+        return this.longitud;
     }
 
     public void desplazar(double desplazamiento) {
+        this.puntoMedio = this.puntoMedio + desplazamiento;
     }
 
     public Intervalo desplazado(double desplazamiento) {
