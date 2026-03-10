@@ -32,6 +32,9 @@ class Intervalo{
     }
 
     public Intervalo desplazado(double desplazamiento) {
+        Intervalo intervalo = this.clone();
+        intervalo.desplazar(desplazamiento);
+        return intervalo;
     }
 
     public boolean incluye(double punto) {
