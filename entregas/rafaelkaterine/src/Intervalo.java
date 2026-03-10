@@ -1,5 +1,7 @@
 class Intervalo{
-     
+     private double puntoMedio;
+     private double longitud;
+
      public Intervalo (double inferior, double superior) {
     }
 
