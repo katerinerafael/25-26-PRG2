@@ -38,6 +38,7 @@ class Intervalo{
     }
 
     public boolean incluye(double punto) {
+        return punto >= this.inferior && punto <= this.superior;
     }
 
     public boolean incluye(Intervalo intervalo) {
