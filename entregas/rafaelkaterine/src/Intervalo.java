@@ -97,6 +97,11 @@ class Intervalo{
         return trozos;
 
     }
+
+    public void recoger() {
+        Scanner Scanner = new Scanner(System.in);
+        boolean valido = false;
+    }
     
     public double puntoMedio() {
         return this.puntoMedio;
