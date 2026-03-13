@@ -1,5 +1,4 @@
-Import java.util.Scanner;
-
+import java.util.Scanner;
 
 class Intervalo{
      private double puntoMedio;
@@ -20,7 +19,7 @@ class Intervalo{
     }
     
     public Intervalo (Intervalo intervalo) {
-        this(intervalo.inferior, intervalo.superior);
+        this(intervalo.puntoMedio, intervalo.longitud);
     }
 
     public Intervalo clone() {
@@ -49,12 +48,12 @@ class Intervalo{
     }
 
     public boolean incluye(Intervalo intervalo) {
+        assert intervalo != null;
         double inferior = this.puntoMedio - this.longitud / 2;
         double superior = this.puntoMedio + this.longitud / 2;
-        
-        double otroInferior = intervalo.puntoMedioPrimera - intervalo.longitud / 2;
+        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2; 
         double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
-        
+
         return inferior <= otroInferior && superior >= otroSuperior;
     }
 
@@ -62,20 +61,6 @@ class Intervalo{
         return this.puntoMedio == intervalo.puntoMedio && this.longitud == intervalo.longitud;
     }
 
-    public Intervalo interseccion(Intervalo intervalo) {
-
-    }
-    
-    public boolean intersecta(Intervalo intervalo) {
-        double inferior = this.puntoMedio - this.longitud / 2;
-        double superior = this.puntoMedio + this.longitud / 2;
-        
-        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
-        double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
-
-        return superior >= otroInferior && otroSuperior >= inferior;
-    }
-    
     public void oponer() {
         this.puntoMedio = -this.puntoMedio;
     }
@@ -88,8 +73,12 @@ class Intervalo{
     public void mostrar() {
         double inferior = this.puntoMedio - this.longitud / 2;
         double superior = this.puntoMedio + this.longitud / 2;
-        console.writeln("[" + inferior + ", " + superior + "]");
+        System.out.println("[" + inferior + ", " + superior + "]");
     }
+
+    public double puntoMedio() {
+        return this.puntoMedio;
+    };
 
     public Intervalo[] trocear(int numeroTrozos) {
         Intervalo[] trozos = new Intervalo[numeroTrozos];
@@ -102,14 +91,39 @@ class Intervalo{
 
     }
 
+
+    public static void main(String[] args) {
+        Intervalo intervalo = new Intervalo(10, 20);
+        
+        System.out.print("Intervalo original: ");
+        intervalo.mostrar(); 
+        
+        System.out.println("Longitud: " + intervalo.longitud());
+        
+        intervalo.desplazar(5);
+        System.out.print("Tras desplazar 5 unidades: ");
+        intervalo.mostrar(); 
+    }
+
+/*
+    public Intervalo interseccion(Intervalo intervalo) {
+        
+    }
+    
+    public boolean intersecta(Intervalo intervalo) {
+        double inferior = this.puntoMedio - this.longitud / 2;
+        double superior = this.puntoMedio + this.longitud / 2;
+        
+        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
+        double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
+
+        return superior >= otroInferior && otroSuperior >= inferior;
+    }
+
     public void recoger() {
         Scanner Scanner = new Scanner(System.in);
         boolean valido = false;
     }
-    
-    public double puntoMedio() {
-        return this.puntoMedio;
-    };
 
-
+*/
 }
