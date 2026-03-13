@@ -38,10 +38,20 @@ class Intervalo{
     }
 
     public boolean incluye(double punto) {
-        return punto >= this.inferior && punto <= this.superior;
+        double inferior = this.puntoMedio - this.longitud / 2;
+        double superior = this.puntoMedio + this.longitud / 2;
+        
+        return punto >= inferior && punto <= superior;
     }
 
     public boolean incluye(Intervalo intervalo) {
+        double inferior = this.puntoMedio - this.longitud / 2;
+        double superior = this.puntoMedio + this.longitud / 2;
+        
+        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
+        double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
+        
+        return inferior <= otroInferior && superior >= otroSuperior;
     }
 
     public boolean equals(Intervalo intervalo) {
