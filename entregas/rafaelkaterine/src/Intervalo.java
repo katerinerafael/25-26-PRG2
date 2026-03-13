@@ -45,6 +45,7 @@ class Intervalo{
     }
 
     public boolean equals(Intervalo intervalo) {
+        return this.puntoMedio == intervalo.puntoMedio && this.longitud == intervalo.longitud;
     }
 
     public Intervalo interseccion(Intervalo intervalo) {
