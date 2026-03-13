@@ -102,7 +102,7 @@ class Intervalo{
     public static void main(String[] args) {
         System.out.println("--- PRUEBAS DE INTERVALOS CON PERSONAJES ---");
 
- 
+    
         Intervalo maria = new Intervalo(10, 30);
         Intervalo pepe = new Intervalo(15, 25);
         Intervalo pepito = new Intervalo(5); 
