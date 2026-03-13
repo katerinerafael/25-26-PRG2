@@ -56,6 +56,7 @@ class Intervalo{
     }
     
     public void oponer() {
+        this.puntoMedio = -this.puntoMedio;
     }
 
     public void doblar() {
