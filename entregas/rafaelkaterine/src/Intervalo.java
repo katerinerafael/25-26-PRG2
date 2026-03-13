@@ -1,3 +1,6 @@
+Import java.util.Scanner;
+
+
 class Intervalo{
      private double puntoMedio;
      private double longitud;
@@ -48,7 +51,7 @@ class Intervalo{
         double inferior = this.puntoMedio - this.longitud / 2;
         double superior = this.puntoMedio + this.longitud / 2;
         
-        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
+        double otroInferior = intervalo.puntoMedioPrimera - intervalo.longitud / 2;
         double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
         
         return inferior <= otroInferior && superior >= otroSuperior;
