@@ -64,7 +64,9 @@ class Intervalo{
 
 
     public void mostrar() {
-        
+        double inferior = this.puntoMedio - this.longitud / 2;
+        double superior = this.puntoMedio + this.longitud / 2;
+        console.writeln("[" + inferior + ", " + superior + "]");
     }
 
     public void recoger() {
