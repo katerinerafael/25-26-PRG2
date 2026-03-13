@@ -63,6 +63,13 @@ class Intervalo{
     }
     
     public boolean intersecta(Intervalo intervalo) {
+        double inferior = this.puntoMedio - this.longitud / 2;
+        double superior = this.puntoMedio + this.longitud / 2;
+        
+        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
+        double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
+
+        return superior >= otroInferior && otroSuperior >= inferior;
     }
     
     public void oponer() {
@@ -80,9 +87,6 @@ class Intervalo{
         console.writeln("[" + inferior + ", " + superior + "]");
     }
 
-    public void recoger() {
-    }
-
     public Intervalo[] trocear(int numeroTrozos) {
         Intervalo[] trozos = new Intervalo[numeroTrozos];
         double nuevaLongitud = this.longitud / numeroTrozos;
@@ -91,10 +95,6 @@ class Intervalo{
             trozos[i] = new Intervalo(inicio + i * nuevaLongitud, inicio + (i + 1) * nuevaLongitud);
         }
         return trozos;
-
-    }
-    
-    public Intervalo union(Intervalo intervalo) {
 
     }
     
