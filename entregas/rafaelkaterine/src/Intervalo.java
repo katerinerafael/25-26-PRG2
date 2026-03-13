@@ -25,7 +25,8 @@ class Intervalo{
         this(0, 0);
     }  
     public Intervalo (Intervalo intervalo) {
-        this(intervalo.puntoMedio, intervalo.longitud);
+        this.puntoMedio = intervalo.puntoMedio;
+        this.longitud = intervalo.longitud;
     }
 
 
@@ -81,41 +82,74 @@ class Intervalo{
         double nuevoSuperior = Math.max(this.getSuperior(), intervalo.getSuperior());
         return new Intervalo(nuevoInferior, nuevoSuperior);
     }
+    public boolean intersecta(Intervalo intervalo) {
+        assert intervalo != null;
+        return this.getSuperior() >= intervalo.getInferior() && 
+            intervalo.getSuperior() >= this.getInferior();
+    }
+    public Intervalo interseccion(Intervalo intervalo) {
+        assert intervalo != null;
+        
+        if (!this.intersecta(intervalo)) {
+            return null; 
+        }
+        double inferior = Math.max(this.getInferior(), intervalo.getInferior());
+        double superior = Math.min(this.getSuperior(), intervalo.getSuperior());
 
-
-
+        return new Intervalo(inferior, superior);
+    }
 
     public static void main(String[] args) {
-        Intervalo intervalo = new Intervalo(10, 20);
+        System.out.println("--- PRUEBAS DE INTERVALOS CON PERSONAJES ---");
+
+ 
+        Intervalo maria = new Intervalo(10, 30);
+        Intervalo pepe = new Intervalo(15, 25);
+        Intervalo pepito = new Intervalo(5); 
+        Intervalo katerine = maria.clone();
+
+        System.out.print("Intervalo Maria: "); maria.mostrar();
+        System.out.print("Intervalo Pepe: "); pepe.mostrar();
+        System.out.print("Intervalo Pepito: "); pepito.mostrar();
+        System.out.print("Intervalo Katerine (clon de Maria): "); katerine.mostrar();
+
+        System.out.println("\n--- PRUEBAS DE INCLUSIÓN Y POSICIÓN ---");
         
-        System.out.print("Intervalo original: ");
-        intervalo.mostrar(); 
-        System.out.println("Longitud: " + intervalo.longitud());
-        intervalo.doblar();
-        System.out.print("Tras doblar: ");
-        intervalo.mostrar(); 
-        System.out.println("Longitud: " + intervalo.longitud());
-    }
+        System.out.println("¿Maria incluye a Pepe?: " + maria.incluye(pepe));
+        System.out.println("¿Pepito intersecta con Maria?: " + pepito.intersecta(maria));
 
-/*
-    public Intervalo interseccion(Intervalo intervalo) {
+        System.out.println("\n--- TRANSFORMACIONES ---");
+
+        System.out.print("Pepe original: "); pepe.mostrar();
+        pepe.desplazar(10);
+        System.out.print("Pepe tras desplazarse 10 unidades: "); pepe.mostrar();
+
+        System.out.print("Maria original (longitud " + maria.longitud() + "): "); maria.mostrar();
+        maria.doblar();
+        System.out.print("Maria tras doblar su tamaño: "); maria.mostrar();
+
+        System.out.println("\n--- OPERACIONES GRUPALES ---");
+
+        Intervalo familiaUnida = pepe.union(pepito);
+        System.out.print("Unión de Pepe y Pepito: "); familiaUnida.mostrar();
+
+        Intervalo zonaComun = maria.interseccion(pepe);
+        if (zonaComun != null) {
+            System.out.print("Zona común entre Maria y Pepe: "); zonaComun.mostrar();
+        } else {
+            System.out.println("Maria y Pepe ya no tienen nada en común.");
+        }
+
+        System.out.println("¿Maria es igual a Katerine?: " + maria.equals(katerine));
+
+        System.out.println("\n--- TROCEANDO A PEPITO ---");
         
-    }
-    
-    public boolean intersecta(Intervalo intervalo) {
-        double inferior = this.puntoMedio - this.longitud / 2;
-        double superior = this.puntoMedio + this.longitud / 2;
-        
-        double otroInferior = intervalo.puntoMedio - intervalo.longitud / 2;
-        double otroSuperior = intervalo.puntoMedio + intervalo.longitud / 2;
-
-        return superior >= otroInferior && otroSuperior >= inferior;
+        Intervalo[] hijosDePepito = pepito.trocear(2);
+        for (int i = 0; i < hijosDePepito.length; i++) {
+            System.out.print("Pepito Jr " + (i + 1) + ": ");
+            hijosDePepito[i].mostrar();
+        }
     }
 
-    public void recoger() {
-        Scanner Scanner = new Scanner(System.in);
-        boolean valido = false;
-    }
 
-*/
 }
