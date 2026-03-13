@@ -59,11 +59,12 @@ class Intervalo{
     }
 
     public void doblar() {
+        this.longitud *= 2;
     }
 
 
     public void mostrar() {
-
+        
     }
 
     public void recoger() {
