@@ -89,7 +89,7 @@ class Intervalo{
     }
     
     public double puntoMedio() {
-
+        return this.puntoMedio;
     };
 
 
