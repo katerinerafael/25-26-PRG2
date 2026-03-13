@@ -65,9 +65,6 @@ class Intervalo{
     public double puntoMedio() {
         return this.puntoMedio;
     }
-
-
-
     public Intervalo[] trocear(int numeroTrozos) {
         Intervalo[] trozos = new Intervalo[numeroTrozos];
         double nuevaLongitud = this.longitud / numeroTrozos;
@@ -78,6 +75,14 @@ class Intervalo{
         return trozos;
 
     }
+    public Intervalo union(Intervalo intervalo) {
+        assert intervalo != null;
+        double nuevoInferior = Math.min(this.getInferior(), intervalo.getInferior());
+        double nuevoSuperior = Math.max(this.getSuperior(), intervalo.getSuperior());
+        return new Intervalo(nuevoInferior, nuevoSuperior);
+    }
+
+
 
 
     public static void main(String[] args) {
