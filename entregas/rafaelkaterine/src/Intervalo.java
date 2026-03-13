@@ -6,6 +6,7 @@ class Intervalo{
      private double longitud;
 
      public Intervalo (double inferior, double superior) {
+        assert inferior <= superior;
         this.longitud = superior - inferior;
         this.puntoMedio = inferior + this.longitud / 2;
     }
