@@ -70,6 +70,13 @@ class Intervalo{
     }
 
     public Intervalo[] trocear(int numeroTrozos) {
+        Intervalo[] trozos = new Intervalo[numeroTrozos];
+        double nuevaLongitud = this.longitud / numeroTrozos;
+        double inicio = this.puntoMedio - this.longitud / 2;
+        for (int i = 0; i < numeroTrozos; i++) {
+            trozos[i] = new Intervalo(inicio + i * nuevaLongitud, inicio + (i + 1) * nuevaLongitud);
+        }
+        return trozos;
 
     }
     
