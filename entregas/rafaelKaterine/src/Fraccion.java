@@ -37,7 +37,10 @@ public class Fraccion {
         numerador = (this.numerador * fraccion.denominador) - (this.denominador * fraccion.numerador);
         denominador = this.denominador * fraccion.denominador;
     }
-    public void multiplicar(Fraccion fraccion) {}
+    public void multiplicar(Fraccion fraccion) {
+        numerador = this.numerador * fraccion.numerador;
+        denominador = this.denominador * fraccion.denominador;
+    }
     public void dividir(Fraccion fraccion) {}
     public void exponenciar(int exponente) {}
     public boolean equals(Fraccion fraccion) {}
