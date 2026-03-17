@@ -46,12 +46,17 @@ public class Fraccion {
         denominador = this.denominador * fraccion.numerador;
     }
     public void exponenciar(int exponente) {
-        numerador = (int) Math.po(wnumerador, exponente);
+        numerador = (int) Math.pow(numerador, exponente);
         denominador = (int) Math.pow(denominador, exponente);
     }
-    public boolean equals(Fraccion fraccion) {}
-    public boolean esMayor(Fraccion fraccion) {}
-    public boolean esMenor(Fraccion fraccion) {}
+    public boolean equals(Fraccion fraccion) {
+    }
+    public boolean esMayor(Fraccion fraccion) {
+        return (this.numerador * fraccion.denominador) > (this.denominador * fraccion.numerador);
+    }
+    public boolean esMenor(Fraccion fraccion) {
+        return (this.numerador * fraccion.denominador) < (this.denominador * fraccion.numerador);
+    }
 
     public String toString() {
         return "[" + numerador + "," + denominador + "]";
