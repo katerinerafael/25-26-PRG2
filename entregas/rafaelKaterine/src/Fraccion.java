@@ -18,4 +18,7 @@ public class Fraccion {
     public void restar(Fraccion fraccion) {}
     public void multiplicar(Fraccion fraccion) {}
     public void dividir(Fraccion fraccion) {}
+
+    public void mostrar() {}
+    public void editar(int numerador, int denominador) {}
 }
