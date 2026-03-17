@@ -12,8 +12,9 @@ public class Fraccion {
         this.denominador = 1;
     }
     public Fraccion(){}
-
+    
     public Fraccion clonar(){}
+    public Fraccion valorAbsoluto() {}
 
     public void mostrar() {}
     public void invertir() {}
