@@ -25,11 +25,16 @@ public class Fraccion {
         console.writeln("[" + numerador + "," + denominador + "]");
     }
     
-    public void invertir() {}
+    public void invertir() {
+    }
     public void oponer() {}
 
-    public void sumar(Fraccion fraccion) {}
-    public void restar(Fraccion fraccion) {}
+    public void sumar(Fraccion fraccion) {
+        
+    }
+    public void restar(Fraccion fraccion) {
+
+    }
     public void multiplicar(Fraccion fraccion) {}
     public void dividir(Fraccion fraccion) {}
     public void exponenciar(int exponente) {}
@@ -38,6 +43,8 @@ public class Fraccion {
     public boolean esMayor(Fraccion fraccion) {}
     public boolean esMenor(Fraccion fraccion) {}
 
-    public String toString() {}
+    public String toString() {
+        return "[" + numerador + "," + denominador + "]";
+    }
 
 } 
