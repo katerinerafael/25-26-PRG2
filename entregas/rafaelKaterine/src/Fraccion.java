@@ -14,19 +14,21 @@ public class Fraccion {
     public Fraccion(){}
 
     public Fraccion clonar(){}
+
+    public void mostrar() {}
+    public void invertir() {}
+    public void oponer() {}
+
     public void sumar(Fraccion fraccion) {}
     public void restar(Fraccion fraccion) {}
     public void multiplicar(Fraccion fraccion) {}
     public void dividir(Fraccion fraccion) {}
     public void exponenciar(int exponente) {}
 
-    public void mostrar() {}
     public boolean equals(Fraccion fraccion) {}
     public boolean esMayor(Fraccion fraccion) {}
     public boolean esMenor(Fraccion fraccion) {}
-    
-    public void invertir() {}
 
-
+    public String toString() {}
 
 } 
