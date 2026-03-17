@@ -15,10 +15,16 @@ public class Fraccion {
     public Fraccion(){
     }
 
-    public Fraccion clonar(){}
-    public Fraccion valorAbsoluto() {}
+    public Fraccion clonar(){
+        return new Fraccion(this);
+    }
+    public Fraccion valorAbsoluto(){}
 
-    public void mostrar() {}
+    public void mostrar() {
+        Console console = new Console();
+        console.writeln("[" + numerador + "," + denominador + "]");
+    }
+    
     public void invertir() {}
     public void oponer() {}
 
