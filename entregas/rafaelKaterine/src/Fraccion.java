@@ -13,6 +13,7 @@ public class Fraccion {
             this(numerador, 1);
     }
     public Fraccion(){
+        this(0, 1);
     }
 
     public Fraccion clonar(){
@@ -26,8 +27,13 @@ public class Fraccion {
     }
     
     public void invertir() {
+        int auxiliar = this.numerador;
+        this.numerador = this.denominador;
+        this.denominador = auxiliar;
     }
-    public void oponer() {}
+    public void oponer() {
+        this.numerador = -this.numerador;
+    }
 
     public void sumar(Fraccion fraccion) {
         numerador = (this.numerador * fraccion.denominador) + (this.denominador * fraccion.numerador);
