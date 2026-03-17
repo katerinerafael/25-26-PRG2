@@ -21,4 +21,10 @@ public class Fraccion {
 
     public void mostrar() {}
     public void editar(int numerador, int denominador) {}
+
+    public boolean equals(Fraccion fraccion) {}
+    public boolean esMayor(Fraccion fraccion) {}
+    public boolean esMenor(Fraccion fraccion) {}
+    
+    public void invertir() {}
 }
