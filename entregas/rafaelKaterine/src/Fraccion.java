@@ -30,15 +30,16 @@ public class Fraccion {
     public void oponer() {}
 
     public void sumar(Fraccion fraccion) {
-        
+        numerador = (this.numerador * fraccion.denominador) + (this.denominador * fraccion.numerador);
+        denominador = this.denominador * fraccion.denominador;
     }
     public void restar(Fraccion fraccion) {
-
+        numerador = (this.numerador * fraccion.denominador) - (this.denominador * fraccion.numerador);
+        denominador = this.denominador * fraccion.denominador;
     }
     public void multiplicar(Fraccion fraccion) {}
     public void dividir(Fraccion fraccion) {}
     public void exponenciar(int exponente) {}
-
     public boolean equals(Fraccion fraccion) {}
     public boolean esMayor(Fraccion fraccion) {}
     public boolean esMenor(Fraccion fraccion) {}
