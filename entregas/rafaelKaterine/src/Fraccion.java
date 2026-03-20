@@ -66,7 +66,7 @@ public class Fraccion {
     }
 
     public String toString() {
-        return "[" + numerador + "," + denominador + "]";
+        return numerador + "/" + denominador;
     }
 
 } 
