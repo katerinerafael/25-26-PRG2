@@ -21,6 +21,9 @@ public class Cliente {
         Fraccion resultado2 = fraccion1.restar(fraccion2);
         console.writeln("Resultado al restar: " + resultado2);
 
+        Fraccion resultado21 = fraccion1.restar(fraccion2).valorAbsoluto();
+        console.writeln("Resultado al restar y estar en valor absoluto: " + resultado21);
+
         Fraccion resultado3 = fraccion1.multiplicar(fraccion2);
         console.writeln("Resultado al multiplicar: " + resultado3);
 
