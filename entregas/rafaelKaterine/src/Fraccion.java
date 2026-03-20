@@ -1,4 +1,3 @@
-
 public class Fraccion {
     private int numerador;
     private int denominador;
@@ -21,11 +20,13 @@ public class Fraccion {
     public Fraccion clonar(){
         return new Fraccion(this);
     }
-    public Fraccion valorAbsoluto(){}
+    public Fraccion valorAbsoluto(){
+        return new Fraccion(Math.abs(numerador), Math.abs(denominador));
+    }
 
     public void mostrar() {
         Console console = new Console();
-        console.writeln(numerador + "/" + denominador;);
+        console.writeln(numerador + "/" + denominador);
     }
     
     public void invertir() {
