@@ -4,6 +4,7 @@ public class Fraccion {
     private int denominador;
 
     public Fraccion(int numerador, int denominador) {
+        assert denominador != 0 : "El denominador no puede ser cero.";
         this.numerador = numerador;
         this.denominador = denominador;
     }
