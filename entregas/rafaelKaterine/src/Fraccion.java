@@ -58,6 +58,7 @@ public class Fraccion {
         denominador = (int) Math.pow(denominador, exponente);
     }
     public boolean equals(Fraccion fraccion) {
+        return !this.esMayor(fraccion) && !this.esMenor(fraccion);
     }
     public boolean esMayor(Fraccion fraccion) {
         return (this.numerador * fraccion.denominador) > (this.denominador * fraccion.numerador);
