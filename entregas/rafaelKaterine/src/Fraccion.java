@@ -25,7 +25,7 @@ public class Fraccion {
 
     public void mostrar() {
         Console console = new Console();
-        console.writeln("[" + numerador + "," + denominador + "]");
+        console.writeln(numerador + "/" + denominador;);
     }
     
     public void invertir() {
