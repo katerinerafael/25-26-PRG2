@@ -38,25 +38,30 @@ public class Fraccion {
         this.numerador = -this.numerador;
     }
 
-    public void sumar(Fraccion fraccion) {
-        numerador = (this.numerador * fraccion.denominador) + (this.denominador * fraccion.numerador);
-        denominador = this.denominador * fraccion.denominador;
+    public Fraccion sumar(Fraccion fraccion) {
+        int numerador = (this.numerador * fraccion.denominador) + (this.denominador * fraccion.numerador);
+        int denominador = this.denominador * fraccion.denominador;
+        return new Fraccion(numerador, denominador);
     }
-    public void restar(Fraccion fraccion) {
-        numerador = (this.numerador * fraccion.denominador) - (this.denominador * fraccion.numerador);
-        denominador = this.denominador * fraccion.denominador;
+    public Fraccion restar(Fraccion fraccion) {
+        int numerador = (this.numerador * fraccion.denominador) - (this.denominador * fraccion.numerador);
+        int denominador = this.denominador * fraccion.denominador;
+        return new Fraccion(numerador, denominador);
     }
-    public void multiplicar(Fraccion fraccion) {
-        numerador = this.numerador * fraccion.numerador;
-        denominador = this.denominador * fraccion.denominador;
+    public Fraccion multiplicar(Fraccion fraccion) {
+        int numerador = this.numerador * fraccion.numerador;
+        int denominador = this.denominador * fraccion.denominador;
+        return new Fraccion(numerador, denominador);
     }
-    public void dividir(Fraccion fraccion) {
-        numerador = this.numerador * fraccion.denominador;
-        denominador = this.denominador * fraccion.numerador;
+    public Fraccion dividir(Fraccion fraccion) {
+        int numerador = this.numerador * fraccion.denominador;
+        int denominador = this.denominador * fraccion.numerador;
+        return new Fraccion(numerador, denominador);
     }
-    public void exponenciar(int exponente) {
-        numerador = (int) Math.pow(numerador, exponente);
-        denominador = (int) Math.pow(denominador, exponente);
+    public Fraccion exponenciar(int exponente) {
+        int numerador = (int) Math.pow(this.numerador, exponente);
+        int denominador = (int) Math.pow(this.denominador, exponente);
+        return new Fraccion(numerador, denominador);
     }
     public boolean equals(Fraccion fraccion) {
         return !this.esMayor(fraccion) && !this.esMenor(fraccion);
