@@ -1,3 +1,4 @@
+import Console;
 class Pista{
     private int limiteDeCarrera;
 
@@ -6,9 +7,9 @@ class Pista{
     }
     public void mostrar() {
         for (int i = 0; i < this.limite; i++) {
-            System.out.print("-");
+            console.writeln("-");
         }
-        System.out.println(); 
+        console.writeln(); 
     }       
 
 }
