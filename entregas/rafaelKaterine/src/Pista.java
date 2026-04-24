@@ -3,7 +3,6 @@ class Pista{
 
     public Pista (int limiteDeCarrera) {
         this.limiteDeCarrera;
-        
     }
 
 }
