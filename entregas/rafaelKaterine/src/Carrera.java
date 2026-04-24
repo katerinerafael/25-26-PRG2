@@ -5,7 +5,4 @@ class Carrera {
         kentucky.empezar();
     }
 
-    public void mostrar(){
-        
-    }
 }

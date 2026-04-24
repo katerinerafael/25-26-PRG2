@@ -13,10 +13,6 @@ class Caballo{
         }
 
     public void mostrar(){
-        for (int i = 0; i < this.posicion; i++) {
-        System.out.print(" ");
-        }
-        System.out.println(";-;' (" + this.alias + ")");
+        System.out.println(";-;'");
     }
 }
-    
