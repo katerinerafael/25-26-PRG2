@@ -1,3 +1,4 @@
+import Console;
 class CarreraDeCaballos {
 
     private Caballo[] caballo;
@@ -15,6 +16,35 @@ class CarreraDeCaballos {
     }
 
     public void empezar(){
-        
+        boolean carreraTerminada = false;
+    
+        while (!carreraTerminada) {
+            turnos.ejecutar(caballos, pista.limite);
+            pista.mostrar(console);
+            for (Caballo caballo : caballos) {
+                caballo.mostrar(console);
+                if (caballo.posicion >= pista.limite) {
+                    carreraTerminada = true;
+                }
+            }
+            pista.mostrar(console);
+            System.out.println();
+        }
+        int cantidadDeGanadores = 0;
+        for (Caballo caballo : caballos) {
+            if (caballo.posicion >= pista.limite) cantidadDeGanadores++;
+        }
+
+        if (cantidadDeGanadores > 1) {
+            console.writeln("Hubo un empate");
+        } else {
+            for (Caballo caballo : caballos) {
+                if (caballo.posicion >= pista.limite) {
+                    console.writeln("El ganador es: " + caballo.alias);
+                }
+            }
+        }
+
     }
+
 
