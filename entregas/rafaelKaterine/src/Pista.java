@@ -1,15 +1,14 @@
+public class Pista {
+    public int limite;
 
-class Pista{
-    private int limiteDeCarrera;
-
-    public Pista (int limiteDeCarrera) {
-        this.limiteDeCarrera = limiteDeCarrera;
+    public Pista(int limite) {
+        this.limite = limite;
     }
-    public void mostrar() {
-        for (int i = 0; i < this.limite; i++) {
-            console.writeln("-");
-        }
-        console.writeln(); 
-    }       
 
+    public void mostrar(Console console) {
+        for (int i = 0; i < this.limite; i++) {
+            console.write("-");
+        }
+        console.writeln();
+    }
 }
