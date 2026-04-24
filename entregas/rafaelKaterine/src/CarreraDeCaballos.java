@@ -1,10 +1,11 @@
 class CarreraDeCaballos {
-
+    private Console console;
     private Caballo[] caballos;
     private Pista pista;
     private Turno turnos;
 
     public CarreraDeCaballos() {
+        console = new Console();
         pista = new Pista(40);
         turnos = new Turno(); 
         caballos = new Caballo[4]; 
@@ -16,19 +17,18 @@ class CarreraDeCaballos {
 
     public void empezar(){
         boolean carreraTerminada = false;
-    
+
         while (!carreraTerminada) {
             turnos.ejecutar(caballos, pista.limite);
-            pista.mostrar(console);
-            for (Caballo caballo : caballos) {
-                caballo.mostrar(console);
-                if (caballo.posicion >= pista.limite) {
-                    carreraTerminada = true;
-                }
+            pista.mostrar(console); 
+            for (Caballo c : caballos) {
+                c.mostrar(console);
+                if (c.posicion >= pista.limite) carreraTerminada = true;
             }
             pista.mostrar(console);
-            System.out.println();
+            console.writeln();
         }
+
         int cantidadDeGanadores = 0;
         for (Caballo caballo : caballos) {
             if (caballo.posicion >= pista.limite) cantidadDeGanadores++;
