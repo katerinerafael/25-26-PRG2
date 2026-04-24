@@ -4,4 +4,8 @@ class Carrera {
         CarreraDeCaballos kentucky = new CarreraDeCaballos();
         kentucky.empezar();
     }
+
+    public void mostrar(){
+        
+    }
 }

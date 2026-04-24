@@ -12,5 +12,9 @@ class CarreraDeCaballos {
         caballos[1] = new Caballo("Secretariat");
         caballos[2] = new Caballo("Potooooooo");
         caballos[3] = new Caballo("WinkyWinky");
-        }
+    }
+
+    public void empezar(){
+        
+    }
 
