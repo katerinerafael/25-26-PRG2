@@ -1,7 +1,8 @@
 class CarreraDeCaballos {
 
     private Caballo[] caballos;
-    private 
+    private Pista pista;
+    
 
 
 }
