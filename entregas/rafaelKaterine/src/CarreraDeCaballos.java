@@ -1,4 +1,3 @@
-import Console;
 class CarreraDeCaballos {
 
     private Caballo[] caballo;
@@ -46,5 +45,6 @@ class CarreraDeCaballos {
         }
 
     }
+}
 
 

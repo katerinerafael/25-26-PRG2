@@ -1,4 +1,3 @@
-import Console;
 class Caballo{
     private final String alias;
     private int posicion = 0;
