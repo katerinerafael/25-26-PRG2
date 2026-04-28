@@ -15,15 +15,19 @@ class CarreraDeCaballos {
         caballos[3] = new Caballo("WinkyWinky");
     }
 
-    public void empezar(){
+    public void empezar() {
         boolean carreraTerminada = false;
 
         while (!carreraTerminada) {
-            turnos.ejecutar(caballos, pista.limite);
+            turnos.ejecutar(caballos, pista);
             pista.mostrar(console); 
-            for (Caballo c : caballos) {
-                c.mostrar(console);
-                if (c.posicion >= pista.limite) carreraTerminada = true;
+            
+            for (Caballo caballo : caballos) {
+                caballo.mostrar(console);
+                
+                if (pista.haTerminado(caballo)) {
+                    carreraTerminada = true;
+                }
             }
             pista.mostrar(console);
             console.writeln();
@@ -31,19 +35,20 @@ class CarreraDeCaballos {
 
         int cantidadDeGanadores = 0;
         for (Caballo caballo : caballos) {
-            if (caballo.posicion >= pista.limite) cantidadDeGanadores++;
+            if (pista.haTerminado(caballo)) {
+                cantidadDeGanadores++;
+            }
         }
 
         if (cantidadDeGanadores > 1) {
             console.writeln("Hubo un empate");
         } else {
             for (Caballo caballo : caballos) {
-                if (caballo.posicion >= pista.limite) {
-                    console.writeln("El ganador es: " + caballo.alias);
+                if (pista.haTerminado(caballo)) {
+                    console.writeln("El ganador es: " + caballo.alias());
                 }
             }
         }
-
     }
 }
 
