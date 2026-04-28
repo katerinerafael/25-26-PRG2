@@ -1,10 +1,18 @@
 import java.util.Random;
 public class Caballo {
-    public String alias;
-    public int posicion = 0;
+    private String alias;
+    private int posicion = 0;
         
     public Caballo(String alias) {
         this.alias = alias;
+    }
+
+    public int posicion(){
+        return this.posicion;
+    }
+
+    public String alias(){
+        return this.alias;
     }
 
     public void avanzar(int limite) {
