@@ -10,7 +10,9 @@ public class Caballo {
     public void avanzar(int limite) {
         int avance = new Random().nextInt(3);
         this.posicion += avance;
-        if (this.posicion > limite) this.posicion = limite;
+        if (this.posicion > limite) {
+            this.posicion = limite;
+        }
     }
 
     public void mostrar(Console console) {
