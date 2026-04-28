@@ -16,40 +16,50 @@ class CarreraDeCaballos {
     }
 
     public void empezar() {
-        boolean carreraTerminada = false;
+            boolean carreraTerminada = false;
 
-        while (!carreraTerminada) {
-            turnos.ejecutar(caballos, pista);
-            pista.mostrar(console); 
-            
-            for (Caballo caballo : caballos) {
-                caballo.mostrar(console);
+            while (!carreraTerminada) {
+                console.clear();
+                turnos.ejecutar(caballos, pista);
+                pista.mostrar(console); 
                 
-                if (pista.haTerminado(caballo)) {
-                    carreraTerminada = true;
+                for (Caballo caballo : caballos) {
+                    caballo.mostrar(console);
+                    
+                    if (pista.haTerminado(caballo)) {
+                        carreraTerminada = true;
+                    }
+                }
+                pista.mostrar(console);
+                console.writeln();
+
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                 }
             }
-            pista.mostrar(console);
-            console.writeln();
-        }
 
-        int cantidadDeGanadores = 0;
-        for (Caballo caballo : caballos) {
-            if (pista.haTerminado(caballo)) {
-                cantidadDeGanadores++;
-            }
-        }
-
-        if (cantidadDeGanadores > 1) {
-            console.writeln("Hubo un empate");
-        } else {
+            int cantidadDeGanadores = 0;
             for (Caballo caballo : caballos) {
                 if (pista.haTerminado(caballo)) {
-                    console.writeln("El ganador es: " + caballo.alias());
+                    cantidadDeGanadores++;
+                }
+            }
+
+            if (cantidadDeGanadores > 1) {
+                console.writeln("Hubo un empate entre ");
+                for (Caballo caballo : caballos) {
+                    if (pista.haTerminado(caballo)) {
+                        console.writeln("- " + caballo.alias());
+                    }
+                }
+            } else {
+                for (Caballo caballo : caballos) {
+                    if (pista.haTerminado(caballo)) {
+                        console.writeln("El ganador es: " + caballo.alias());
+                    }
                 }
             }
         }
-    }
 }
-
-

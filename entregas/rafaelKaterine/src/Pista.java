@@ -5,6 +5,10 @@ public class Pista {
         this.limite = limite;
     }
 
+    public int limite() {
+        return this.limite;
+    }
+
     public boolean haTerminado(Caballo caballo) {
         return caballo.posicion() >= this.limite;
     }

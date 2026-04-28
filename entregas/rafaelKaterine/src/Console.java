@@ -127,6 +127,11 @@ public class Console {
         this.write(value + "\n");
     }
 
+    public void clear() {
+    System.out.print("\033[H\033[2J");
+    System.out.flush();
+    }
+
     public void write(double value) {
         System.out.print(value);
     }
@@ -146,4 +151,6 @@ public class Console {
     private void writeError(String regExp) {
         System.out.println("Error de formato: se esperaba " + regExp);
     }
+
+    
 }
