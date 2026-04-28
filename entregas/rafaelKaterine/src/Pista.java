@@ -1,8 +1,12 @@
 public class Pista {
-    public int limite;
+    private int limite;
 
     public Pista(int limite) {
         this.limite = limite;
+    }
+
+    public boolean haTerminado(Caballo caballo) {
+        return caballo.posicion() >= this.limite;
     }
 
     public void mostrar(Console console) {
